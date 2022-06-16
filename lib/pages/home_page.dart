@@ -41,20 +41,40 @@ class _HomePageState extends State<HomePage> {
         title: Text("Catelog App"),
       ),
       //listview builder gives recyclerview to render items
-      body: (CatelogItem.item!=null && CatelogItem.item!.isNotEmpty)? 
-      ListView.builder(
-        // itemCount: CatelogItem.item.length,
-        itemCount: CatelogItem.item!.length,
-        //how to display item
-        itemBuilder: (context, index) {
-          return ItemWidget(
-            // item: CatelogItem.item[index],
-            item: CatelogItem.item![index],
-          );
-        },
-      ):const Center(
-        child: CircularProgressIndicator(),
-      ),
+      body: (CatelogItem.item != null && CatelogItem.item!.isNotEmpty)
+          ? GridView.builder(
+              gridDelegate:
+                  SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    // crossAxisSpacing: 16,
+                    // mainAxisExtent: 16
+                  ),
+                  
+              itemBuilder: (context, index) {
+                final item = CatelogItem.item![index];
+                return Card(
+                    // clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    child: GridTile(
+                        header: Container(
+                          child: Text(item.name,style: TextStyle(color: Colors.white),),
+
+                        decoration: BoxDecoration(
+                          color: Colors.purple
+                        ),
+                        padding: EdgeInsets.all(2),),
+                        footer: Text(
+                          item.price.toString(),
+                        ),
+                        child: Image.network(item.image)));
+              },
+              itemCount: CatelogItem.item!.length,
+              )
+
+          : Center(
+              child: CircularProgressIndicator(),
+            ),
       drawer: MyDrawer(),
     );
   }
