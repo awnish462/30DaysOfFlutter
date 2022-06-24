@@ -11,8 +11,9 @@ class CatelogHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      
       children: [
-        "Catelog App".text.xl5.bold.color(MyTheme.darkBluishColor).make(),
+        "Catelog App".text.xl5.bold.color(context.theme.errorColor).make(),
         "Trending products".text.xl2.make().py8(),
       ],
     );
