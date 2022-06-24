@@ -15,25 +15,27 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white,
         child: ButtonBar(
-                alignment: MainAxisAlignment.spaceBetween,
-                buttonPadding: EdgeInsets.zero,
-                children: [
-                  "\$${catelog.price}".text.bold.xl3.color(Colors.red).make(),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: "Buy".text.make(),
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(MyTheme.darkBluishColor),
-                        shape: MaterialStateProperty.all(StadiumBorder())),
-                  ).wh(90,40),
-                ],
-              ).p32(),
+          alignment: MainAxisAlignment.spaceBetween,
+          buttonPadding: EdgeInsets.zero,
+          children: [
+            "\$${catelog.price}".text.bold.xl3.color(Colors.red).make(),
+            ElevatedButton(
+              onPressed: () {},
+              child: "Add to cart".text.make(),
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(MyTheme.darkBluishColor),
+                  shape: MaterialStateProperty.all(StadiumBorder())),
+            ).wh(110, 40),
+          ],
+        ).p32(),
       ),
       body: SafeArea(
         bottom: false,
@@ -50,18 +52,19 @@ class HomeDetailPage extends StatelessWidget {
               edge: VxEdge.TOP,
               child: Container(
                 width: context.screenWidth,
-                  color: Colors.white,
-                  child: Column(
-                    children: [
-                      catelog.name.text.xl4
-                          .color(MyTheme.darkBluishColor)
-                          .bold
-                          .make(),
-                      catelog.desc.text.textStyle(context.captionStyle).xl.make(),
-                      // 10.heightBox,
-                    ],
-                  ).py64(),
-                  ),
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    catelog.name.text.xl4
+                        .color(MyTheme.darkBluishColor)
+                        .bold
+                        .make(),
+                    catelog.desc.text.textStyle(context.captionStyle).xl.make(),
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.".text.textStyle(context.captionStyle).make().p16(),
+                    // 10.heightBox,
+                  ],
+                ).py64(),
+              ),
             ))
           ],
         ),

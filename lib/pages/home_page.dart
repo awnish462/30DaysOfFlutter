@@ -3,6 +3,7 @@ import 'dart:convert';
 // import 'dart:html';
 // import 'dart:html';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -10,6 +11,7 @@ import 'package:flutter_catelog/model/catelog.dart';
 import 'package:flutter_catelog/pages/widgets/home_widgets/catelog_header.dart';
 import 'package:flutter_catelog/pages/widgets/home_widgets/catelog_list.dart';
 import 'package:flutter_catelog/pages/widgets/themes.dart';
+import 'package:flutter_catelog/utilities/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomePage extends StatefulWidget {
@@ -45,6 +47,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: MyTheme.creamColor,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, MyRoutes.cartRoute);
+          },
+          backgroundColor: MyTheme.darkBluishColor,
+          child: Icon(CupertinoIcons.cart),
+        ),
         body: SafeArea(
           child: Container(
             padding: Vx.m24,
@@ -55,16 +64,10 @@ class _HomePageState extends State<HomePage> {
                 if (CatelogItem.item != null && CatelogItem.item!.isNotEmpty)
                   CatelogList().expand()
                 else
-                  
-                     CircularProgressIndicator().centered().expand(),
-                
+                  CircularProgressIndicator().centered().expand(),
               ],
             ),
           ),
         ));
   }
 }
-
-
-
-
