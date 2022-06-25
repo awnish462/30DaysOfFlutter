@@ -30,16 +30,19 @@ class _CartTotal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 100,
+        height: 150,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             "\$9999".text.xl5.color(context.theme.errorColor).make(),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: "Buying not supported yet".text.make()));
+                },
                 style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all(MyTheme.darkBluishColor)),
+                        MaterialStateProperty.all(MyTheme.lightBluishColor)),
                 child: "Buy".text.make())
           ],
         ));
@@ -54,11 +57,12 @@ class CartList extends StatefulWidget {
 class _CartListState extends State<CartList> {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemBuilder: ((context, index) => 
-    ListTile(
-      leading:Icon(Icons.done),
-      trailing: IconButton(onPressed: (){}, icon: Icon(Icons.remove_circle_outline)),
-      title: "Item 1".text.make(),
-    )));
+    return ListView.builder(
+        itemBuilder: ((context, index) => ListTile(
+              leading: Icon(Icons.done),
+              trailing: IconButton(
+                  onPressed: () {}, icon: Icon(Icons.remove_circle_outline)),
+              title: "Item 1".text.make(),
+            )));
   }
 }

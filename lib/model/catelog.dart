@@ -3,16 +3,16 @@ import 'dart:convert';
 
 class CatelogItem {
   static List<Item> item=[
-    Item(name: "", desc: "", price:0, color: "", id: "", image: "")
+    Item(name: "", desc: "", price:0, color: "", id:0, image: "")
   ];
 
   //get item by Id
 
- static Item getById(int id) =>
+  Item getById(int id) =>
       item.firstWhere((element) => element.id == id.toString(), orElse: null);
 
   //Get Item by position
-  static Item getByPosition(int pos) => item[pos];
+   Item getByPosition(int pos) => item[pos];
 
   // = [
   //   Item(
@@ -31,7 +31,7 @@ class Item {
   final String desc;
   final num price;
   final String color;
-  final String id;
+  final int id;
   final String image;
   Item({
     required this.name,
@@ -58,7 +58,7 @@ class Item {
     String? desc,
     num? price,
     String? color,
-    String? id,
+    int? id,
     String? image,
   }) {
     return Item(
@@ -88,7 +88,7 @@ class Item {
       desc: map['desc'] as String,
       price: map['price'] as num,
       color: map['color'] as String,
-      id: map['id'] as String,
+      id: map['id'] as int,
       image: map['image'] as String,
     );
   }
