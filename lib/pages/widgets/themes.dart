@@ -4,9 +4,9 @@ import 'package:velocity_x/velocity_x.dart';
 class MyTheme {
   static ThemeData lightTheme() => ThemeData(
       primarySwatch: Colors.green,
-      cardColor: Colors.black,
-      canvasColor: darkcreamColor,
-      errorColor: darkBluishColor,
+      cardColor: Colors.white,
+      canvasColor: creamColor,
+      errorColor: Vx.black,
       
       appBarTheme: AppBarTheme(
           color: Colors.white,
@@ -24,7 +24,7 @@ class MyTheme {
           color: Colors.black,
           elevation: 0.0,
           iconTheme: IconThemeData(color: Colors.white),
-          titleTextStyle: TextStyle(color: Colors.black, fontSize: 20)));
+          titleTextStyle: TextStyle(color: Colors.white, fontSize: 20)));
 
   static Color creamColor = Color(0xfff5f5f5);
   static Color darkcreamColor = Vx.gray900;

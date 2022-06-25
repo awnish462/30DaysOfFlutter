@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_catelog/pages/widgets/themes.dart';
 import 'package:flutter_catelog/utilities/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

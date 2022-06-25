@@ -2,7 +2,18 @@
 import 'dart:convert';
 
 class CatelogItem {
-  static  List<Item>? item;
+  static List<Item> item=[
+    Item(name: "", desc: "", price:0, color: "", id: "", image: "")
+  ];
+
+  //get item by Id
+
+ static Item getById(int id) =>
+      item.firstWhere((element) => element.id == id.toString(), orElse: null);
+
+  //Get Item by position
+  static Item getByPosition(int pos) => item[pos];
+
   // = [
   //   Item(
   //       name: "Iphone 13",

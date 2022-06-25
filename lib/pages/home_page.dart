@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CatelogHeader(),
-                if (CatelogItem.item != null && CatelogItem.item!.isNotEmpty)
+                if (CatelogItem.item != null && CatelogItem.item.isNotEmpty)
                   CatelogList().expand()
                 else
                   CircularProgressIndicator().centered().expand(),

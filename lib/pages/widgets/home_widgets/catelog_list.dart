@@ -12,9 +12,9 @@ class CatelogList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      itemCount: CatelogItem.item?.length,
+      itemCount: CatelogItem.item.length,
       itemBuilder: (context, index) {
-        final catelog = CatelogItem.item![index];
+        final catelog = CatelogItem.getByPosition(index);
         //catelogitems is widget which we will make
         return InkWell(
           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeDetailPage(catelog: catelog))),
