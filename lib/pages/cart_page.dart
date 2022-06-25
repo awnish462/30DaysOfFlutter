@@ -8,11 +8,57 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:context.canvasColor,
-      appBar: AppBar(backgroundColor: Colors.transparent,
-      title: "Cart".text.bold.make(),
-
+      backgroundColor: context.canvasColor,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        title: "Cart".text.bold.make(),
+      ),
+      body: Column(
+        children: [
+          CartList().p32().expand(),
+          Divider(),
+          _CartTotal(),
+        ],
       ),
     );
+  }
+}
+
+class _CartTotal extends StatelessWidget {
+  const _CartTotal({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        height: 100,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            "\$9999".text.xl5.color(context.theme.errorColor).make(),
+            ElevatedButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(MyTheme.darkBluishColor)),
+                child: "Buy".text.make())
+          ],
+        ));
+  }
+}
+
+class CartList extends StatefulWidget {
+  @override
+  State<CartList> createState() => _CartListState();
+}
+
+class _CartListState extends State<CartList> {
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(itemBuilder: ((context, index) => 
+    ListTile(
+      leading:Icon(Icons.done),
+      trailing: IconButton(onPressed: (){}, icon: Icon(Icons.remove_circle_outline)),
+      title: "Item 1".text.make(),
+    )));
   }
 }
