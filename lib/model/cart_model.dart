@@ -1,9 +1,7 @@
 import 'package:flutter_catelog/model/catelog.dart';
 
 class CartModel {
-  static final cartModel = CartModel.internal();
-  CartModel.internal();
-  factory CartModel() => cartModel;
+  
   late CatelogItem _catelog;
 
   final List<int> _itemids = [];
@@ -12,7 +10,7 @@ class CartModel {
   CatelogItem get catelog => _catelog;
   //Set Catelog
   set catelog(CatelogItem newCatelog) {
-    assert(newCatelog != null);
+    // assert(newCatelog != null);
     _catelog = newCatelog;
   }
 
@@ -35,4 +33,8 @@ class CartModel {
   void remove(Item item) {
     _itemids.remove(item.id);
   }
+
+  toMap() {}
+
+  // static CartModel fromMap(Map<String, dynamic> map) {}
 }
