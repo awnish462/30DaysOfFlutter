@@ -1,7 +1,7 @@
 {
     "products" : [
     {
-        "id":"1",
+        "id":1,
         "name":"iphone 10",
         "desc":"Apple iphone 10th generation",
         "price":888,
@@ -9,7 +9,7 @@
         "image":"https://images.unsplash.com/photo-1589798312995-8428138bb1ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8aXBob25lJTIwMTB8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
     },
     {
-        "id":"2",
+        "id":2,
         "name":"iphone 11 ",
         "desc":"Apple iphone 11th generation",
         "price":899,
@@ -17,7 +17,7 @@
         "image":"https://images.unsplash.com/photo-1592286927505-1def25115558?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
     },
     {
-        "id":"3",
+        "id":3,
         "name":"iphone 12 ",
         "desc":"Apple iphone 12th generation",
         "price":999,
@@ -25,7 +25,7 @@
         "image":"https://rukminim1.flixcart.com/image/832/832/kg8avm80/mobile/j/f/9/apple-iphone-12-dummyapplefsn-original-imafwg8dhe5aeyhk.jpeg?q=70"
     },
     {
-        "id":"4",
+        "id":4,
         "name":"iphone SE ",
         "desc":"Apple iphone SE",
         "price":999,
@@ -33,7 +33,7 @@
         "image":"https://images.unsplash.com/photo-1628348264385-e2c2204d7edf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGlwaG9uZSUyMHNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60"
     },
     {
-        "id":"5",
+        "id":5,
         "name":"iphone 7 ",
         "desc":"Apple iphone 7th generation",
         "price":699,
@@ -41,7 +41,7 @@
         "image":"https://images.unsplash.com/photo-1559806805-ad57515aab71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGlwaG9uZSUyMDd8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
     },
     {
-        "id":"6",
+        "id":6,
         "name":"iphone 6 ",
         "desc":"Apple iphone 6th generation",
         "price":699,
@@ -49,7 +49,7 @@
         "image":"https://images.unsplash.com/photo-1549546851-c3550b32e3f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aXBob25lJTIwNnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60"
     },
     {
-        "id":"7",
+        "id":7,
         "name":"iphone 7 plus ",
         "desc":"Apple iphone 7 plus",
         "price":699,
@@ -57,7 +57,7 @@
         "image":"https://images.unsplash.com/photo-1603816245457-fe9c80b740ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGlwaG9uZSUyMDclMjBwbHVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60"
     },
     {
-        "id":"8",
+        "id":8,
         "name":"iphone 12 pro max ",
         "desc":"Apple iphone 12th generation",
         "price":699,

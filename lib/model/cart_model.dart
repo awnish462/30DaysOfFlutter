@@ -1,6 +1,9 @@
 import 'package:flutter_catelog/model/catelog.dart';
 
 class CartModel {
+  static final cartModel = CartModel.internal();
+  CartModel.internal();
+  factory CartModel() => cartModel;
   late CatelogItem _catelog;
 
   final List<int> _itemids = [];
@@ -28,6 +31,7 @@ class CartModel {
     _itemids.add(item.id);
   }
 
+  //Remove item
   void remove(Item item) {
     _itemids.remove(item.id);
   }

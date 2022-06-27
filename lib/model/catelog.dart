@@ -2,6 +2,10 @@
 import 'dart:convert';
 
 class CatelogItem {
+   static final catModel = CatelogItem.internal();
+  CatelogItem.internal();
+  factory CatelogItem() => catModel;
+
   static List<Item> item=[
     Item(name: "", desc: "", price:0, color: "", id:0, image: "")
   ];
@@ -9,7 +13,7 @@ class CatelogItem {
   //get item by Id
 
   Item getById(int id) =>
-      item.firstWhere((element) => element.id == id.toString(), orElse: null);
+      item.firstWhere((element) => element.id == id, orElse: null);
 
   //Get Item by position
    Item getByPosition(int pos) => item[pos];
