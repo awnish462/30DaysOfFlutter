@@ -1,7 +1,8 @@
 import 'package:flutter_catelog/model/catelog.dart';
+import 'package:flutter_catelog/store/store.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class CartModel {
-  
   late CatelogItem _catelog;
 
   final List<int> _itemids = [];
@@ -23,11 +24,11 @@ class CartModel {
   num get totalprice =>
       items.fold(0, (total, current) => total + current.price);
 
-  //Add item
+  // //Add item
 
-  void add(Item item) {
-    _itemids.add(item.id);
-  }
+  // void add(Item item) {
+  //   _itemids.add(item.id);
+  // }
 
   //Remove item
   void remove(Item item) {
@@ -37,4 +38,14 @@ class CartModel {
   toMap() {}
 
   // static CartModel fromMap(Map<String, dynamic> map) {}
+}
+
+class AddMutation extends VxMutation<MyStore> {
+  final Item item;
+
+  AddMutation(this.item);
+  @override
+  perform() {
+    store!.cart._itemids.add(item.id);
+  }
 }

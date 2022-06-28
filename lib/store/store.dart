@@ -9,7 +9,7 @@ class MyStore extends VxStore {
   late CatelogItem catelog;
   late CartModel cart;
 
-  Mystore() {
+  MyStore() {
     catelog = CatelogItem();
     cart = CartModel();
     cart.catelog = catelog;
