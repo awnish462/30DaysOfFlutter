@@ -27,21 +27,23 @@ class CartPage extends StatelessWidget {
 }
 
 class _CartTotal extends StatelessWidget {
-  const _CartTotal({Key? key}) : super(key: key);
+   _CartTotal({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-   final CartModel _cart = (VxState.store as MyStore).cart;
+    final CartModel _cart = (VxState.store as MyStore).cart;
     return SizedBox(
         height: 150,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            "\$${_cart.totalprice}"
+           VxConsumer( notifications: {},mutations: {RemoveMutation},builder: (context,store,status){
+            return "\$${_cart.totalprice}"
                 .text
                 .xl5
                 .color(context.theme.errorColor)
-                .make(),
+                .make();
+           }),
             ElevatedButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -56,10 +58,11 @@ class _CartTotal extends StatelessWidget {
   }
 }
 
-class CartList extends StatelessWidget{
+class CartList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final CartModel _cart = (VxState.store as MyStore).cart; 
+    VxState.watch(context, on: [RemoveMutation]);
+    final CartModel _cart = (VxState.store as MyStore).cart;
     return _cart.items.isEmpty
         ? "Nothing to show".text.xl3.makeCentered()
         : ListView.builder(
@@ -68,9 +71,10 @@ class CartList extends StatelessWidget{
                   leading: Icon(Icons.done),
                   trailing: IconButton(
                       onPressed: () {
-                        _cart.remove(_cart.items[index]);
+                        // _cart.remove(_cart.items[index]);
+                        RemoveMutation(_cart.items[index]);
                         // setState(() {
-                          
+
                         // });
                       },
                       icon: Icon(Icons.remove_circle_outline)),
